@@ -1,0 +1,31 @@
+<template>
+  <!-- v-bind:class="{ active:isActive }" -->
+  <h1 
+    :class="{ active:isActive }"
+    @click="activate">
+    Hello?!({{ isActive }})
+  </h1>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      isActive: false
+    }
+  },
+  methods: {
+    activate() {
+      this.isActive = true
+    }
+  }
+}
+</script>
+
+// scoped - App.vue 제외한 다른 곳에서는 스타일이 적용 안되는 것
+<style scoped> 
+  .active {
+    color: red;
+    font-weight: bold;
+  }
+</style>

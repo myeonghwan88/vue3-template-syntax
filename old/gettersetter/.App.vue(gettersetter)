@@ -1,0 +1,44 @@
+<template>
+  <button @click="add">
+    ADD
+  </button>
+  <h1>{{ reversedMessage }}</h1>
+  <h1>{{ reversedMessage }}</h1>
+  <h1>{{ reversedMessage }}</h1>
+  <h1>{{ reversedMessage }}</h1>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      // Getter, Setter
+      msg: 'Hello Computed!'
+    }
+  },
+  computed: { // 계산된 데이터/캐싱 - 처음 이후부터는 두번째부터 쭉~이미 연산된 결과 자체만 출력
+  // 캐싱으로 인하여 반복된 작업에서 부담이 적어짐
+  // computed 읽기 전용
+  // Getter
+    //  reversedMessage() { // {{ reversedMessage }}
+    //   return this.msg.split('').reverse().join('')
+    // }
+    // Getter, Setter
+    reversedMessage: {
+      get() {
+        return this.msg.split('').reverse().join('')
+      },
+      set(value) {
+        // this.msg = value
+        console.log(value)
+      }
+    }
+  },
+  methods: {
+    add() {
+      this.reversedMessage += '!?'
+      // this.msg += '!?'
+    }
+  }
+}
+</script>

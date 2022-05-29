@@ -1,0 +1,36 @@
+<template>
+  <!-- <h1>{{ msg + '??' }}</h1> -->
+  <!-- <h1>{{ msg.split('').reverse().join('') }}</h1>
+  <h1>{{ msg.split('').reverse().join('') }}</h1>
+  <h1>{{ msg.split('').reverse().join('') }}</h1>
+  <h1>{{ msg.split('').reverse().join('') }}</h1> -->
+  <!-- <h1>{{ reverseMessage() }}</h1>
+  <h1>{{ reverseMessage() }}</h1>
+  <h1>{{ reverseMessage() }}</h1>
+  <h1>{{ reverseMessage() }}</h1>   -->
+  <h1>{{ reversedMessage }}</h1>
+  <h1>{{ reversedMessage }}</h1>
+  <h1>{{ reversedMessage }}</h1>
+  <h1>{{ reversedMessage }}</h1>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      msg: 'Hello Computed!'
+    }
+  },
+  computed: { // 계산된 데이터/캐싱 - 처음 이후부터는 두번째부터 쭉~이미 연산된 결과 자체만 출력
+  // 캐싱으로 인하여 반복된 작업에서 부담이 적어짐
+     reversedMessage() { // {{ reversedMessage }}
+      return this.msg.split('').reverse().join('')
+    }
+  }//,
+  // methods: {
+  //   reverseMessage() { // {{ reverseMessage() }}
+  //     return this.msg.split('').reverse().join('')
+  //   }
+  // }
+}
+</script>

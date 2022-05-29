@@ -1,0 +1,24 @@
+<template>
+  <!-- <a
+    href="https://www.naver.com/"
+    target="_blank"
+    @click="handler">NAVER</a> -->
+  <a
+    href="https://www.naver.com/"
+    target="_blank"
+    @click.prevent.once="handler">NAVER</a>
+</template>
+
+<script>
+  export default {
+    methods: {
+      handler() {
+      // handler(event) {
+        // event.preventDefault() // 기본동작 방지 - ex) a 태그 기본동작 방지
+        //@click.prevent="handler" 동일
+        //@click.once="handler">NAVER</a> 한번만 핸들러 메소드가 사용 됨
+        console.log('ABC!')
+      }
+    }
+  }
+</script>

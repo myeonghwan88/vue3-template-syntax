@@ -1,0 +1,59 @@
+<template>
+  <ul>
+    <button @click="handler">
+      Click me!
+    </button>
+    <!-- <li
+      v-for="(f, i) in newFruits"
+      :key="f">
+      {{ f }}-{{ i + 1 }}
+    </li> -->
+    <!-- <li
+      v-for="fruit in newFruits"
+      :key="fruit.id">
+      {{ fruit.name }}-{{ fruit.id }} 
+    </li> -->
+    <li
+      v-for="{ id, name } in newFruits"
+      :key="id">
+      {{ name }}-{{ id }} 
+    </li>
+  </ul>
+</template>
+
+<script>
+import shortid from 'shortid'
+
+export default {
+  data() {
+    return {
+      fruits: ['Apple', 'Banana', 'Cherry'],
+    //   newFruits: [
+    //     { id: 0, name: 'Apple'},
+    //     { id: 1, name: 'Banana'},
+    //     { id: 2, name: 'Cherry'}
+    //   ]
+    }
+  },
+  computed: {
+    newFruits() {
+    //   return this.fruits.map((fruit, index) => {
+    //     return {
+    //       id: shortid.generate(),
+    //       name: fruit
+    //     }
+    //   }
+    // )}
+      return this.fruits.map(fruit => ({
+          id: shortid.generate(),
+          name: fruit
+        }))
+    }
+  },
+  methods: {
+    handler() {
+      this.fruits.push('Orange')
+    }
+  }
+}
+</script>
